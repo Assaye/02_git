@@ -1,4 +1,4 @@
-name: rerendering readme file
+name: Rerendering README file
 
 on:
   push:
