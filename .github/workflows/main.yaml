@@ -1,0 +1,43 @@
+name: rerendering readme file
+
+on:
+  push:
+    branches:
+      - main
+      
+
+jobs:
+  render_my_file:
+    runs-on: ubuntu-latest
+    
+    permission:
+      contents: write
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4.2.2
+      
+    - name: Install Quarto CLI
+      uses: quarto-dev/quarto-actions/setup@v4.2.2
+      with:
+        version: LATEST
+        
+    - name: Install R Packages
+      runs: |
+        Rscript -e "install.packages('renv', repos = 'https://packagemanager.posit.co/cran/latest')"
+        Rscript -e "renv::restore(repos = 'https://packagemanager.posit.co/cran/latest')"
+        
+    - name: Render Quarto file
+      runs: |
+        quarto render README.qmd
+        
+    - name: Commit readme.md file
+      runs: |
+        git config --global Assaye "github-actions[bot]"
+        git config --global bulti.ta@gmail.com "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "Update README.md from readme.qmd"
+        git push
+        
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
