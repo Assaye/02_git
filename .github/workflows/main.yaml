@@ -15,10 +15,10 @@ jobs:
       
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4.2.2
+      uses: actions/checkout@v4.4.2
       
     - name: Install Quarto CLI
-      uses: quarto-dev/quarto-actions/setup@v4.2.2
+      uses: quarto-dev/quarto-actions/setup@v4.4.2
       with:
         version: LATEST
         
