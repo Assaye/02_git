@@ -30,3 +30,17 @@ Note to render quarto file:
 - press render icon
 - `ctrl + shift + k` -- render quarto file 
 - terminal: `quarto render filename.qmd`
+
+
+GitSteps
+- git status
+- git add . 
+- git commit - m "first commit"
+- git status
+- create new repository on github page
+- git remote add origin https://github.com/Assaye/02_git.git
+- 
+- git push
+
+
+
