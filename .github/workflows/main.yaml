@@ -10,7 +10,7 @@ jobs:
   render_my_file:
     runs-on: ubuntu-latest
     
-    permission:
+    permissions:
       contents: write
       
     steps:
