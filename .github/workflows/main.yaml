@@ -23,16 +23,16 @@ jobs:
         version: LATEST
         
     - name: Install R Packages
-      runs: |
+      run: |
         Rscript -e "install.packages('renv', repos = 'https://packagemanager.posit.co/cran/latest')"
         Rscript -e "renv::restore(repos = 'https://packagemanager.posit.co/cran/latest')"
         
     - name: Render Quarto file
-      runs: |
+      run: |
         quarto render README.qmd
         
     - name: Commit readme.md file
-      runs: |
+      run: |
         git config --global Assaye "github-actions[bot]"
         git config --global bulti.ta@gmail.com "github-actions[bot]@users.noreply.github.com"
         git add README.md
