@@ -3,9 +3,10 @@ title: "02_git"
 format: gfm 
 ---
 
-## Quarto
+```{r}
+library(tidyverse) # Easily Install and Load the 'Tidyverse' 
+```
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
 ```{r}
 #| echo: false
@@ -20,8 +21,11 @@ Hello. This report was rendered at `{r} current_time`
 
 Steps
 
-- to install use: renv::install("knitr")
-- to check use: renv::snapshot()
+- renv::init()
+- renv::install()
+- renv::snapshot()
+- renv::restore()
+- renv::status()
 
 gfm: github flavoured markdown 
 
@@ -44,6 +48,11 @@ GitSteps
 
 Workflow
 - create a folder .github
+
+
+
+
+
 
 
 
